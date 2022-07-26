@@ -1,0 +1,16 @@
+
+syntax = "proto3";
+package tutorial;
+
+message PredictRequest {
+  repeated string inputString = 1;
+}
+
+message PredictResponse {
+  repeated float value = 1;
+}
+
+//Service and RPC method definition
+service SampleService {
+  rpc Predict (PredictRequest) returns (PredictResponse);
+}
